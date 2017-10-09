@@ -1,0 +1,17 @@
+[user]
+    name = Ryan Hang
+    email = ryanhang92@gmail.com
+[core]
+    excludesfile = ~/.gitignore_global
+[push]
+    default = upstream
+    followTags = true
+[alias]
+    co = checkout
+    cm = commit
+    st = status
+    br = branch
+[pull]
+    rebase = true
+[rebase]
+    autoStash = true
