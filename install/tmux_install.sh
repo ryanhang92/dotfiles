@@ -1,11 +1,7 @@
-# Linux Install
-sudo apt-get update; apt-get install tmux
+if [ -d $HOME/.tmux.conf ]; then
+    echo "removing tmux conf"
+    rm ~/.tmux.conf
+fi
 
-
-
-
-
-
-# macOS Install
-brew install tmux
-
+echo "adding tmux conf"
+cp ../tmux/.tmux.conf ~/.tmux.conf

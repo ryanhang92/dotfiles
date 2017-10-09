@@ -1,8 +1,7 @@
-# Ubuntu
-sudo apt-get install zsh
+if [ -d $HOME/.zshrc ]; then
+    echo "removing old zsh config"
+    rm ~/.zshrc
+fi
 
-# macOS
-brew install zsh zsh-completions
-
-# Common Commands
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+echo "adding my zsh config"
+cp ../zsh/.zshrc ~/.zshrc
