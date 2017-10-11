@@ -1,0 +1,25 @@
+# Remote Server Set UP
+
+    # Spin up instance
+
+
+    # Access Instance
+
+
+
+# Use Vim Remote development
+
+
+
+# Viewing visualization and results remotely
+
+
+
+
+
+
+
+
+
+
+

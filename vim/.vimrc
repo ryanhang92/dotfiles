@@ -1,7 +1,50 @@
+" Install Plugins
+
+" Install vim-plug if we don't already have it
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'captbaritone/molokai'
+Plug 'altercation/vim-colors-solarized'
+Plug 'ajh17/spacegray.vim'
+
+Plug 'scrooloose/nerdtree'
+
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py', 'for': 'cpp' }
+
+Plug 'scrooloose/syntastic'
+
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'rking/ag.vim'
+
+Plug 'tpope/vim-surround'
+
+Plug 'tpope/vim-repeat'
+
+Plug 'tpope/vim-fugitive'
+
+Plug 'airblade/vim-gitgutter'
+
+Plug 'vimwiki/vimwiki'
+
+Plug 'majutsushi/tagbar'
+
+Plug 'godlygeek/tabular'
+
+call plug#end()
+
+
 " Colors {{{
 syntax enable           " enable syntax processing
-colorscheme badwolf
-set termguicolors
 " }}}
 
 " Spaces & Tabs {{{
@@ -54,23 +97,6 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 " }}}
 
-" Vim Plug {{{
-call plug#begin('~/.vim/plugged')
-Plug 'bling/vim-airline'
-Plug 'derekwyatt/vim-scala'
-Plug 'janko-m/vim-test'
-Plug 'keith/swift.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'moll/vim-node'
-Plug 'scrooloose/syntastic'
-Plug 'simnalamburt/vim-mundo'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
-call plug#end()
-" }}}
 
 " airline {{{
 set laststatus=2
@@ -81,38 +107,46 @@ let g:airline_right_sep = ''
 let g:airline_right_sep = ''
 " }}}
 
-" Custom Functions {{{
-function! ToggleNumber()
-    if(&relativenumber == 1)
-        set norelativenumber
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
+" Ravel's Configs
+set showcmd   " display incomplete commands
+set incsearch   " do incremental searching
+set backspace=indent,eol,start
+set modelines=1
 
-" strips trailing whitespace at the end of files. this
-" is called on buffer write in the autogroup above.
-function! <SID>StripTrailingWhitespaces()
-    " save last search & cursor position
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    let @/=_s
-    call cursor(l, c)
-endfunction
+" Linewrap up/down
+nnoremap j gj
+nnoremap k gk
 
-function! <SID>CleanFile()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %!git stripspace
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-" }}}
-"
+" Window Navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+set autoindent
+
+" Tabs to spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+"Make finds center on screen
+nnoremap n nzz 
+nnoremap N Nzz 
+
+if system("echo -n \"$(uname)\"") == "Darwin"
+    "Copy/Pasting on Mac
+    map <C-v> :r !pbpaste<CR>
+    map <C-c> :w !pbcopy<CR><CR>
+endif
+
