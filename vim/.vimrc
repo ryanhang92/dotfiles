@@ -150,3 +150,10 @@ if system("echo -n \"$(uname)\"") == "Darwin"
     map <C-c> :w !pbcopy<CR><CR>
 endif
 
+" Plugin Keys
+
+" Toogle nerdTree with C-n
+map <C-n> :NERDTreeToggle<CR>
+
+" Toggle Tagbar with f8
+nmap <F8> :TagbarToggle<CR>
