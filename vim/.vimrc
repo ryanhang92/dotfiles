@@ -157,3 +157,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Toggle Tagbar with f8
 nmap <F8> :TagbarToggle<CR>
+
+" Ctrl P to C-p
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
