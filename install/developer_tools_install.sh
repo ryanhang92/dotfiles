@@ -13,6 +13,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     sudo apt-get install zsh
 
+    sudo apt-get install emacs
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo -e "\n OSX detected"
 
@@ -30,6 +32,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install zsh zsh-completions
 
     brew install wget
+
+    brew install emacs
 
 else
     echo -e "\n Not Linux or OSX. Not Installing"

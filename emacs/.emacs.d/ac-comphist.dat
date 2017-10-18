@@ -1,0 +1,14 @@
+((("highlight-parentheses" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("-1" .
+   [1 0])
+  ("tool-bar-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("tabbar-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("autopair-global-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("autopair" .
+   [0 0 0 0 0 0 2 0])
+  ("require" .
+   [1 0 0 0 0 0 0])))
