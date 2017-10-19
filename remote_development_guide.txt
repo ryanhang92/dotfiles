@@ -7,7 +7,6 @@
 
 
 
-# Use Vim Remote development
 
 
 
