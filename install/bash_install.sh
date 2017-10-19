@@ -4,4 +4,4 @@ if [ -d $HOME/.bash_profile ]; then
 fi
 
 echo "adding my bash config"
-cp ../bash/.bash_profile ~/.bash_profile
+cp ~/dotfiles/bash/.bash_profile ~/.bash_profile

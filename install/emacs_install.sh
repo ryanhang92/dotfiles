@@ -9,6 +9,6 @@ if [ -d $HOME/.emacs.d ]; then
 fi
 
 echo "adding .emacs and .emacs.d"
-cp ../emacs/.emacs ~/.emacs
-cp -r ../emacs/.emacs.d ~/.emacs.d
+cp ~/dotfiles/emacs/.emacs ~/.emacs
+cp -r ~/dotfiles/emacs/.emacs.d ~/.emacs.d
 

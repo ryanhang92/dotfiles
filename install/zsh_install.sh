@@ -4,4 +4,4 @@ if [ -d $HOME/.zshrc ]; then
 fi
 
 echo "adding my zsh config"
-cp ../zsh/.zshrc ~/.zshrc
+cp ~/dotfiles/zsh/.zshrc ~/.zshrc

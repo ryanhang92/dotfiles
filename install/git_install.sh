@@ -11,5 +11,5 @@ fi
 
 
 echo "adding ryan's git configs"
-cp ../git/.gitconfig ~/.gitconfig
-cp ../git/.gitignore_global ~/.gitignore_global
+cp ~/dotfiles/git/.gitconfig ~/.gitconfig
+cp ~/dotfiles/git/.gitignore_global ~/.gitignore_global

@@ -5,9 +5,11 @@
 #done
 
 echo "setting up Ryan's environment"
-source install/package_install.sh
+source install/developer_tools_install.sh
+source install/science_package_install.sh
 source install/git_install.sh
 source install/vim_install.sh
 source install/tmux_install.sh
 source install/bash_install.sh
 source install/zsh_install.sh
+source install/emacs_install.sh
