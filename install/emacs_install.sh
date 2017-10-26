@@ -6,6 +6,7 @@ fi
 if [ -d $HOME/.emacs.d.old ]; then
     echo "removing .emacs.d.old folder"
     rm -rf ~/.emacs.d.old
+fi
 
 if [ -d $HOME/.emacs ]; then
     echo "removing .emacs file"
