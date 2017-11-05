@@ -1,5 +1,22 @@
-" Install Plugins
+"Install Plugins
 
+
+" Vundle (just for YCM)
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set runtime path and initailize vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" YCM
+Plugin 'Valloric/YouCompleteMe'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+" VimPlug
 " Install vim-plug if we don't already have it
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
