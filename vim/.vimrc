@@ -26,6 +26,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'crusoexia/vim-monokai'
 Plug 'captbaritone/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ajh17/spacegray.vim'
@@ -184,4 +185,7 @@ let g:ctrlp_cmd = 'CtrlP'
 
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
+
+syntax on
+colorscheme monokai
 
