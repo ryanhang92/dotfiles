@@ -1,6 +1,5 @@
 "Install Plugins
 
-
 " Vundle (just for YCM)
 set nocompatible              " be iMproved, required
 filetype off                  " required

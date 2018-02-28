@@ -1,9 +1,0 @@
-# In the sublime settings
-{
-	"ignored_packages": [],
-}
-
-# In the keymap file
-
-
-
