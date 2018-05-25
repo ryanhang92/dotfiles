@@ -3,17 +3,21 @@ echo -e "\n Developer tools installation"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     echo -e "\n Linux detected"
 
-    sudo apt-get update
+    sudo apt update
 
-    sudo apt-get install git
+    sudo apt install curl
 
-    sudo apt-get install tmux
+    sudo apt install vim
 
-    sudo apt-get install silversearcher-ag
+    sudo apt install git
 
-    sudo apt-get install zsh
+    sudo apt install tmux
 
-    sudo apt-get install emacs
+    sudo apt install silversearcher-ag
+
+    sudo apt install zsh
+
+    sudo apt install emacs
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo -e "\n OSX detected"
