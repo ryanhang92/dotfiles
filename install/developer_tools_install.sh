@@ -19,6 +19,10 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     sudo apt install emacs
 
+    sudo apt-get install nodejs
+
+    sudo apt-get install npm
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     echo -e "\n OSX detected"
 
