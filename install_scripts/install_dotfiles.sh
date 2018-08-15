@@ -1,4 +1,13 @@
 # Installing all of the dotfiles - swapping their configuration into the right place)
+echo "Swapping in the dotfiles"
+
+lowercase() {
+    echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
+}
+
+OS=`lowercase \`uname\``
+
+echo "${OS} was the OS detected"
 
 ### Installing Bash Profile ###
 if [ -d $HOME/.bash_profile.old ]; then
@@ -29,8 +38,8 @@ fi
 echo "adding vimrc"
 cp ~/dotfiles/.vimrc ~/.vimrc
 
-if [ "$OSTYPE" = "linux-gnu" ]; then
-    echo -e "\n Installing ycm on linux, for other OSs use another IDE" 
+if [ "${OS}" = "linux" ]; then
+    echo -e "Installing ycm on linux, for other OSs use another IDE" 
     echo "Installing ycm plugin after updating vimrc with vundle configs"
     sudo rm -rf ~/.vim/bundle
     (cd ~/ && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)

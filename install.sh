@@ -1,6 +1,6 @@
 # Installing the development environment
 
-echo "Installing the dev environment"
+echo "Setting up the custom development environment!"
   . install_scripts/install_developer_tools.sh
   # . install_scripts/install_science_packages.sh
   . install_scripts/install_dotfiles.sh

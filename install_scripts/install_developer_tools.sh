@@ -1,7 +1,15 @@
-echo -e "\n Developer tools installation"
+echo "Developer tools installation"
 
-if [ "$OSTYPE" = "linux-gnu" ]; then
-    echo -e "\n linux-gnu detected"
+lowercase(){
+    echo "$1" | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/"
+}
+
+OS=`lowercase \`uname\``
+
+echo "${OS} was the OS detected"
+
+if [ "${OS}" = "linux" ]; then
+    echo "Applying linux package installations"
     sudo apt update
     sudo apt install curl
     sudo apt install vim
@@ -11,8 +19,8 @@ if [ "$OSTYPE" = "linux-gnu" ]; then
     sudo apt install zsh
     sudo apt install emacs
 
-elif [ "$OSTYPE" = "darwin" ]; then
-    echo -e "\n macOS detected"
+elif [ "${OS}" = "darwin" ]; then
+    echo "Applying macOS package installations"
 
    if test ! $(which brew); then
         echo "Homebrew not found, install Homebrew"
@@ -26,7 +34,7 @@ elif [ "$OSTYPE" = "darwin" ]; then
     brew install emacs
 
 else
-    echo -e "\n Not Linux or OSX. Correct Development OS not found exiting installation"
+    echo "\n Not Linux or OSX. Correct Development OS not found exiting installation"
 fi
 
 
