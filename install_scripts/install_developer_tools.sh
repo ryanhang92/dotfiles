@@ -1,6 +1,6 @@
 echo -e "\n Developer tools installation"
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [ "$OSTYPE" = "linux-gnu" ]; then
     echo -e "\n linux-gnu detected"
     sudo apt update
     sudo apt install curl
@@ -11,7 +11,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo apt install zsh
     sudo apt install emacs
 
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+elif [ "$OSTYPE" = "darwin" ]; then
     echo -e "\n macOS detected"
 
    if test ! $(which brew); then

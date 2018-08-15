@@ -29,7 +29,7 @@ fi
 echo "adding vimrc"
 cp ~/dotfiles/.vimrc ~/.vimrc
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [ "$OSTYPE" = "linux-gnu" ]; then
     echo -e "\n Installing ycm on linux, for other OSs use another IDE" 
     echo "Installing ycm plugin after updating vimrc with vundle configs"
     sudo rm -rf ~/.vim/bundle
