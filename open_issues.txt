@@ -1,0 +1,5 @@
+1. Fix Hack for bash auto launching, i'm selecting on every bash profile load
+
+
+
+
