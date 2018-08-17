@@ -9,18 +9,33 @@ OS=`lowercase \`uname\``
 
 echo "${OS} was the OS detected"
 
+### Installing Bashrc ###
+if [ -d $HOME/.bashrc.old ]; then
+    echo "removing old bashrc config"
+    rm ~/.bashrc.old
+fi
+
+if [ -d $HOME/.bashrc ]; then
+    echo "removing bashrc config"
+    mv ~/.bashrc ~/.bashrc.old
+fi
+
+echo "adding my bashrc config"
+cp ~/dotfiles/.bashrc ~/.bashrc
+
+
 ### Installing Bash Profile ###
 if [ -d $HOME/.bash_profile.old ]; then
-    echo "removing old bash config"
+    echo "removing old bash_profile config"
     rm ~/.bash_profile.old
 fi
 
 if [ -d $HOME/.bash_profile ]; then
-    echo "removing bash config"
+    echo "removing bash_profile config"
     mv ~/.bash_profile ~/.bash_profile.old
 fi
 
-echo "adding my bash config"
+echo "adding my bash_profile config"
 cp ~/dotfiles/.bash_profile ~/.bash_profile
 
 
