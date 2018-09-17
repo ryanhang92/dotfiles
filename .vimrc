@@ -1,20 +1,5 @@
 "Install Plugins
 
-" Vundle (just for YCM)
-set nocompatible              " be iMproved, required
-filetype off                  " required
-" set runtime path and initailize vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-" YCM
-Plugin 'Valloric/YouCompleteMe'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-
 " VimPlug
 " Install vim-plug if we don't already have it
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -24,6 +9,18 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+
+" Neovim auto complete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+" Or Vim completes me, just use Tab git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe
 
 Plug 'crusoexia/vim-monokai'
 Plug 'captbaritone/molokai'
@@ -139,6 +136,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" UI Editor changes
+set cursorline
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

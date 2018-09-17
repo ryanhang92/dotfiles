@@ -84,5 +84,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c=clear
+alias s=source
+alias rd="rm -rf"
+alias tmux="TERM=screen-256color-bce tmux"
 
 #
