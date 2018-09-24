@@ -36,6 +36,8 @@ Plug 'scrooloose/syntastic'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'bling/vim-bufferline'
+
 Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'rking/ag.vim'
