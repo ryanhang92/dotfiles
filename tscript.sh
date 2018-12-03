@@ -11,7 +11,8 @@ tmux
 tmux new-session $session 
 
 # Split pane 1 horizontal by %80
-tmux splitw -v -p 20
+# tmux splitw -v -p 20
+tmux splitw -h -p 80
 
 # Select pane 1, set dir to api, run vim
 tmux selectp -t 1 
