@@ -1,19 +1,19 @@
-
-# setup a work space called `work` with two windows
-# I can alias to my work directories
-
+# Create a name for the initial tmux session.
 session="work"
 
-# set up tmux
-tmux
+# Create a new session called work and split the window.
+tmux new -s work -d
+tmux split-window -h -p 80 -t $session
 
-# create a new tmux session
-tmux new-session $session 
+# Open vim in the second window and return to the first window.
+tmux select-pane -t 1
+tmux send-keys -t $session "vim" C-m
+tmux select-pane -t 0
 
 # Split pane 1 horizontal by %80
 # tmux splitw -v -p 20
-tmux splitw -h -p 80
+# tmux splitw -h -p 80
 
-# Select pane 1, set dir to api, run vim
-tmux selectp -t 1 
-tmux send-keys "vim" C-m 
+# Attach the session to the running tmux instance.
+tmux attach -t $session
+
