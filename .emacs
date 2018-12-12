@@ -22,7 +22,7 @@
 
 ;;load the theme
 ;;theme needed to be installed
-(load-theme 'solarized-light' t)
+(load-theme 'monokai' t)
 
 ;;line nums
 (when (version<= "26.0.50" emacs-version )
@@ -54,8 +54,12 @@ scroll-step 1)
 (setq-default tab-width 4 indent-tabs-mode nil)
 
 ;;helm
-;;package-install helm
+;;package-install elm
 (require 'helm)
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(helm-mode 1)
 
 ;;neo-tree - display tree directory with f8
 ;;package install neotree oof melpa
@@ -105,10 +109,10 @@ scroll-step 1)
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
+    ("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (color-theme ## solarized-theme key-chord spacemacs-dark zenburn-theme tabbar spacemacs-theme projectile professional-theme powerline paren-completer neotree highlight-parentheses helm evil autopair auto-complete ample-zen-theme ample-theme))))
+    (solarized-theme key-chord spacemacs-dark zenburn-theme tabbar spacemacs-theme projectile professional-theme powerline paren-completer neotree highlight-parentheses helm evil autopair auto-complete ample-zen-theme ample-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
