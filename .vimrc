@@ -185,3 +185,4 @@ let g:ctrlp_cmd = 'CtrlP'
 syntax on
 colorscheme monokai
 
+set term=screen-256color

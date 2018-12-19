@@ -18,3 +18,6 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 # To add git information 
 # Add 'git' to the pmodule list (under zstyle ':prezto:load' pmodule \ in your ~/.zpreztorc
+if [[ $TERM == xterm ]]; then
+    TERM=xter-256color
+fi
