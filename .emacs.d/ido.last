@@ -1,0 +1,39 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/rhang/" . ".emacs.d/")
+ ("/Users/rhang/data_science/" . "hwk0/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/rhang/"
+ "/Users/rhang/dotfiles/"
+ "/Users/rhang/data_science/hwk0/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ ".emacs"
+ "install.sh"
+ "monty_hall_simulation.py"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/rhang/.emacs.d/" (23568 45148 851740 162000) "themes/" "games/" "elpa/" "recentf" "url/" ".emacs.desktop" "auto-save-list/" "projectile.cache" "projectile-bookmarks.eld" "ido.last~" "ido.last" "ac-comphist.dat" "../" "./")
+
+ ("/Users/rhang/" (23568 45198 242463 658000) ".zlogout" "AnacondaProjects/" ".conda/" ".zlogin" "count.py" ".viminfo" ".bash_history" "interviews/" "compiler/" ".gitconfig" ".zcompdump.zwc" ".cache/" ".continuum/" "Downloads/" ".oh-my-zsh/" ".bash_profile" "mansions.py" ".vscode/" ".babel.json" "#mansions.py#" "Documents/" ".npm/" ".zprezto/" ".zcompdump" "coding/" ".Trash/" ".emacs~" ".profile" "Applications/" ".emacs" ".vimrc" "Movies/" ".ssh/" ".anaconda/" "osx-terminal.app-colors-solarized/" ".zshenv" "Public/" ".emacs.d.old/" ".bash_sessions/" ".gitignore_global" ".node_repl_history" ".emacs.d/" "codeChallenge/" ".matplotlib/" "Library/" ".zhistory" "Desktop/" ".ipython/" "sfly-service-homework/" ".zsh_history" "website/" "data_science/" ".zprofile" "Pictures/" ".zshrc" ".bashrc" ".profile-anaconda.bak" "cs_189/" ".CFUserTextEncoding" ".tmux.conf" "dotfiles/" ".DS_Store" "go/" "mock_projects/" ".vim/" ".spyder/" ".#mansions.py" ".condarc" ".zcompdump-Ryan’s MacBook Pro-5.3" "Music/" ".config/" ".zpreztorc" "anaconda/" "tmp_code/" "../" "./")
+
+ ("/Users/rhang/dotfiles/" (23556 33564 138842 399000) "tscript.sh" ".gitconfig" ".bash_profile" ".git/" "sublime_config.txt" "pygmalion.zsh-theme" ".emacs" ".vimrc" "install_scripts/" "open_issues.txt" "guides/" ".gitignore" ".gitignore_global" "README.md" ".emacs.d/" "install.sh" ".zshrc" ".bashrc" "zsh_alias.txt" ".tmux.conf" "../" "./")
+
+ ("/Users/" (23565 37285 376745 72000) "Shared/" ".localized" "rhang/" "../" "./")
+
+ ("/Users/rhang/data_science/hwk0/" (23565 53669 411721 375000) "monty_hall_simulation.py" "../" "./")
+
+ ("/Users/rhang/data_science/" (23565 53669 430265 772000) ".git/" "hwk2/" ".gitignore" "README.md" "hwk1/" "hwk0/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
