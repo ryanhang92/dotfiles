@@ -1,4 +1,6 @@
-((("highlight-parentheses" .
+((("here" .
+   [1 0 0 0])
+  ("highlight-parentheses" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
   ("-1" .
    [1 0])
@@ -11,4 +13,12 @@
   ("autopair" .
    [0 0 0 0 0 0 2 0])
   ("require" .
-   [1 0 0 0 0 0 0])))
+   [1 0 0 0 0 0 0])
+  ("solarized-light" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  ("monokai" .
+   [1 0 0 0 0 0 0])
+  ("other-frame" .
+   [2 0 0 0 0 0 0 0 0 0 0])
+  ("other-window" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])))

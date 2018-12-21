@@ -1,1 +1,1 @@
-("~/Desktop/autobot/" "~/Desktop/shenanigans/")
+("~/data_science/" "~/dotfiles/")
