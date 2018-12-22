@@ -20,15 +20,20 @@
 (setq evil-replace-state-cursor '("red" bar))
 (setq evil-operator-state-cursor '("red" hollow))
 
-;;load the theme
-;;theme needed to be installed
-(load-theme 'monokai' t)
+;;load the theme after installation
+(load-theme 'solarized-light' t)
+
+;;load custom themes
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;;line nums
 (when (version<= "26.0.50" emacs-version )
   (global-display-line-numbers-mode))
 (global-linum-mode t)
 (setq linum-format "%d ")
+
+;;show cursor position within line
+(column-number-mode 1)
 
 ;;ido mode
 (ido-mode 1)
@@ -112,7 +117,7 @@ scroll-step 1)
     ("bd7b7c5df1174796deefce5debc2d976b264585d51852c962362be83932873d9" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(package-selected-packages
    (quote
-    (solarized-theme key-chord spacemacs-dark zenburn-theme tabbar spacemacs-theme projectile professional-theme powerline paren-completer neotree highlight-parentheses helm evil autopair auto-complete ample-zen-theme ample-theme))))
+    (color-theme-solarized solarized-theme key-chord spacemacs-dark zenburn-theme tabbar spacemacs-theme projectile professional-theme powerline paren-completer neotree highlight-parentheses helm evil autopair auto-complete ample-zen-theme ample-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
