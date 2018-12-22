@@ -1,24 +1,24 @@
-((("here" .
-   [1 0 0 0])
-  ("highlight-parentheses" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
-  ("-1" .
-   [1 0])
-  ("tool-bar-mode" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("tabbar-mode" .
-   [1 0 0 0 0 0 0 0 0 0 0])
-  ("autopair-global-mode" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
-  ("autopair" .
-   [0 0 0 0 0 0 2 0])
-  ("require" .
+((("other-window" .
+   [1 0 0 0 0 0 0 0 0 0 0 0])
+  ("other-frame" .
+   [2 0 0 0 0 0 0 0 0 0 0])
+  ("monokai" .
    [1 0 0 0 0 0 0])
   ("solarized-light" .
    [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
-  ("monokai" .
+  ("require" .
    [1 0 0 0 0 0 0])
-  ("other-frame" .
-   [2 0 0 0 0 0 0 0 0 0 0])
-  ("other-window" .
-   [1 0 0 0 0 0 0 0 0 0 0 0])))
+  ("autopair" .
+   [0 0 0 0 0 0 2 0])
+  ("autopair-global-mode" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0])
+  ("tabbar-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0])
+  ("tool-bar-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("-1" .
+   [1 0])
+  ("highlight-parentheses" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("here" .
+   [1 0 0 0])))
