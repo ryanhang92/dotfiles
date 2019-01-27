@@ -39,6 +39,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'machakann/vim-highlightedyank'
 Plug 'mhinz/vim-grepper'
+Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rstacruz/sparkup', {'rtp': 'vim'}
 Plug '/roxma/nvim-yarp'
@@ -90,10 +91,31 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ajh17/spacegray.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'trevordmiller/nova-vim'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
 " Plugin Configurations
+
+" ale {{{2
+let g:ale_open_list = 1
+let g:ale_sign_error='⊘'
+let g:ale_sign_warning='⚠'
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 0
+let g:ale_emit_conflict_warnings = 0
+
+let g:ale_linters = {
+    \ 'go': ['go vet', 'golint', 'go build'],
+    \ 'haskell': ['stack-ghc-mod'],
+    \ }
+let g:ale_linter_aliases = {
+    \ 'pandoc': ['markdown']
+    \ }
+
+" Show 5 lines of errors (default: 10)
+let g:ale_list_window_size = 10
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR> " Toogle nerdTree with C-n
@@ -110,6 +132,52 @@ let g:airline_left_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_sep = ''
+" }}}
+
+" deoplete {{{2
+set completeopt=menu,preview,longest
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
+
+" Jedi Vim {{{2
+let g:jedi#show_call_signatures = 0
+let g:jedi#use_tabs_not_buffers = 1
+
+" vim-go {{{2
+let g:go_def_mapping_enabled = 0
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+let g:go_term_enabled = 1
+
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+
+let g:go_highlight_array_whitespace_error = 0
+let g:go_highlight_chan_whitespace_error = 0
+let g:go_highlight_space_tab_error = 0
+let g:go_highlight_trailing_whitespace_error = 0
+
+let g:go_snippet_engine = "neosnippet"
+
+" grepper {{{2
+let g:grepper =
+    \ {
+    \ 'tools': ['rg', 'ag', 'git'],
+    \ 'open': 1,
+    \ 'switch': 1,
+    \ 'jump': 0,
+    \ 'dir': 'filecwd',
+    \ }
+
+" Gitgutter {{{
+" highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
 " }}}
 
 " Syntastic {{{
@@ -169,13 +237,14 @@ set wmnu                " Menu for tab completion
 set mouse=a             " Mouse support
 set so=10               " 10 lines of context when scrolling
 set showcmd             " show command in bottom bar
-set nocursorline        " highlight current line
-" set cursorline
+" set nocursorline        " highlight current line
+set cursorline
 set wildmenu
 set lazyredraw
 set showmatch           " higlight matching parenthesis
 set fillchars+=vert:┃
 set hlsearch            " highlight all matches
+set colorcolumn=80
 
 " Use true color if not on Terminal.app
 if $TERM_PROGRAM != "Apple_Terminal"
@@ -183,7 +252,7 @@ if $TERM_PROGRAM != "Apple_Terminal"
 endif
 
 " Show invisible characters
-set list lcs=tab:»\ ,trail:·
+" set list lcs=tab:»\ ,trail:·
 
 colo molokai
 
@@ -221,6 +290,17 @@ if system("echo -n \"$(uname)\"") == "Darwin"
     map <C-c> :w !pbcopy<CR><CR>
 endif
 
+if (has("nvim"))
+"For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+set termguicolors
+endif
+
 " ----------------------------------------------------------------------------
 
 " Personal Customizations and Style
@@ -238,7 +318,14 @@ map <C-l> <C-w>l
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 
+" Color Themes
+set t_Co=256   " This is may or may not needed.
+
 syntax on
+
+set background=dark
+colorscheme PaperColor
 "colorscheme monokai
-colorscheme molokai
+"colorscheme molokai
 "colorscheme nova
+"colorscheme onedark
