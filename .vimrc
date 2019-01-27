@@ -135,7 +135,7 @@ let g:airline_right_sep = ''
 " }}}
 
 " ctags {{{2
-set tags=./tags,tags;$HOME "recurrsively search up for a tags file
+set tags=./tags,tags;$HOME; "recurrsively search up for a tags file
 
 " deoplete {{{2
 set completeopt=menu,preview,longest
@@ -198,11 +198,11 @@ set foldlevelstart=10   " start with fold level of 1
 " }}}
 
 " Backups {{{
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set writebackup
+"set backup
+"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set backupskip=/tmp/*,/private/tmp/*
+"set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set writebackup
 " }}}
 
 " General Configuration
@@ -281,7 +281,8 @@ let mapleader = "\<Space>"
 nnoremap n nzz 
 nnoremap N Nzz 
 
-" Spaces & Tabs {{{
+" Auto detect and setup by filetype {{{
+filetype on
 filetype indent on
 filetype plugin on
 " }}}
