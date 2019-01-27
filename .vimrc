@@ -34,7 +34,6 @@ Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'justinmk/molokai'
 Plug 'justinmk/vim-sneak'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'machakann/vim-highlightedyank'
@@ -78,6 +77,7 @@ Plug 'jneen/ragel.vim'
 Plug 'pbrisbin/html-template-syntax'
 Plug 'rust-lang/rust.vim'
 Plug 'sebastianmarkow/deoplete-rust'
+Plug 'sheerun/vim-polyglot' " Language pack for use with syntax on
 Plug 'solarnz/thrift.vim', {'for': 'thrift'}
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-after'
@@ -86,12 +86,12 @@ Plug 'zchee/deoplete-go', {'do': 'make'}
 
 " Color Schemes
 Plug 'crusoexia/vim-monokai'
-Plug 'captbaritone/molokai'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ajh17/spacegray.vim'
-Plug 'sheerun/vim-polyglot'
 Plug 'trevordmiller/nova-vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'justinmk/molokai'
+Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -293,6 +293,7 @@ if system("echo -n \"$(uname)\"") == "Darwin"
     map <C-c> :w !pbcopy<CR><CR>
 endif
 
+" True color support
 if (has("nvim"))
 "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -311,7 +312,7 @@ endif
 " jk escape
 :imap jk <Esc>
 
-" Window Navigation
+" Window Navigation (ctrl-n hjlk to move between splits)
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -326,9 +327,9 @@ set t_Co=256   " This is may or may not needed.
 
 syntax on
 
-set background=dark
+set background=dark " Can set to light for other themes
 colorscheme PaperColor
 "colorscheme monokai
 "colorscheme molokai
 "colorscheme nova
-"colorscheme onedark
+"colorscheme one
