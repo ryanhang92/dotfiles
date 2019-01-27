@@ -14,6 +14,7 @@
         :bnext or :h buffer-list, with my new bindings it is tab and shift tab
         :bnew, :enew, split or new blank buffers
         :bdelete or :bd {file name or number}
+        :ls to list buffers
 
         # window management
 
