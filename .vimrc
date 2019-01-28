@@ -95,6 +95,18 @@ Plug 'rakr/vim-one'
 
 call plug#end()
 
+
+" ----------------------------------------------------------------------------
+"  Global autocmds {{{1
+" ----------------------------------------------------------------------------
+
+augroup vimrc_ft_hooks
+    autocmd!
+    autocmd FileType go call s:SetupGo()
+    autocmd FileType gitcommit setlocal tw=72
+    autocmd FileType python call s:SetupPython()
+augroup end
+
 " Plugin Configurations
 
 " ale {{{2
@@ -306,9 +318,36 @@ if (has("termguicolors"))
 set termguicolors
 endif
 
+" Language specific function
 " ----------------------------------------------------------------------------
+"
+function! s:SetupPython() " {{{2
+    let b:delimitMate_nesting_quotes = ['"','''', '`']
+    call s:ClosePreviewOnMove()
+endfunction
+
+function! s:SetupGo() " {{{2
+    setlocal noet
+    nmap <buffer> <leader>d <Plug>(go-def)
+
+    " Search for declarations in the current file or directory.
+    nmap <buffer> <leader>ss :GoDecls<CR>
+    nmap <buffer> <leader>sd :GoDeclsDir<CR>
+
+    call s:ClosePreviewOnMove()
+endfunction
+
+" ClosePreviewOnMove sets up an autocmd to close the preview window once the
+" cursor moves.
+function! s:ClosePreviewOnMove() " {{{2
+    autocmd CursorMovedI <buffer> call s:ClosePreview()
+    autocmd InsertLeave  <buffer> call s:ClosePreview()
+endfunction
+
 
 " Personal Customizations and Style
+" ----------------------------------------------------------------------------
+"
 
 " jk escape
 :imap jk <Esc>
