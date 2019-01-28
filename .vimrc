@@ -159,6 +159,7 @@ let g:jedi#show_call_signatures = 0
 let g:jedi#use_tabs_not_buffers = 1
 
 " vim-go {{{2
+" remember to install the binaries to get this to work check out help vim-go
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
