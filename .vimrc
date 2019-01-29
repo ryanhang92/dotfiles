@@ -345,6 +345,11 @@ function! s:ClosePreviewOnMove() " {{{2
     autocmd InsertLeave  <buffer> call s:ClosePreview()
 endfunction
 
+function! s:ClosePreview() " {{{2
+    if pumvisible() == 0 && bufname('%') != "[Command Line]"
+        silent! pclose
+    endif
+endfunction
 
 " Personal Customizations and Style
 " ----------------------------------------------------------------------------
