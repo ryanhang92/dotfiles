@@ -236,7 +236,7 @@ set sw=4                " Number of spaces to use for each indent
 set ts=4                " Number of spaces tab will count for
 set nowrap              " No wrapping
 set ic scs              " Smart case insensitive
-set icm=split           " Show :s result incrementally
+" set icm=split           " Show :s result incrementally
 set tc=match            " Case sensitive for tag search
 set sta                 " Smart tab
 set bg=dark             " We have a dark background

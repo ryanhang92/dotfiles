@@ -63,6 +63,11 @@ if [ "${OS}" = "linux" ]; then
     eval ~/.vim/bundle/YouCompleteMe/.install.py --clang-completer
 fi
 
+### Installing Neovim Configs ###
+echo "adding init.vim from nvim setup"
+mkdir -p ~/.config/nvim
+cp ~/dotfiles/init.vim ~/.config/nvim
+
 
 ### Installing Tmux Configs ###
 if [ -d $HOME/.tmux.conf.old ]; then
