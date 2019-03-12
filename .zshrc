@@ -17,6 +17,7 @@ alias rd="rm -rf"
 alias tmux="TERM=screen-256color-bce tmux"
 alias vim="nvim"
 alias python="python3"
+alias pip="pip3"
 
 # To add git information
 # Add 'git' to the pmodule list (under zstyle ':prezto:load' pmodule \ in your ~/.zpreztorc
