@@ -29,6 +29,7 @@ Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'honza/vim-snippets'
+Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
@@ -155,6 +156,7 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = $GOPATH . '/bin/gocode'
 
 " Jedi Vim {{{2
+let g:jedi#force_py_version=3
 let g:jedi#show_call_signatures = 0
 let g:jedi#use_tabs_not_buffers = 1
 
@@ -203,11 +205,11 @@ let g:syntastic_python_python_exec = 'python3'
 " }}}
 
 " Folding {{{
-set foldmethod=indent   " fold based on indent level
-set foldnestmax=10      " max 10 depth
-set foldenable          " don't fold files by default on open
-nnoremap <space> za
-set foldlevelstart=10   " start with fold level of 1
+"set foldmethod=indent   " fold based on indent level
+" set foldnestmax=10      " max 10 depth
+" set foldenable          " don't fold files by default on open
+" nnoremap <space> za
+" set foldlevelstart=10   " start with fold level of 1
 " }}}
 
 " Backups {{{
@@ -239,7 +241,6 @@ set ic scs              " Smart case insensitive
 " set icm=split           " Show :s result incrementally
 set tc=match            " Case sensitive for tag search
 set sta                 " Smart tab
-set bg=dark             " We have a dark background
 set tw=78               " Wrap text after 78 characters
 set lz                  " Lazy redraw; faster macros
 set ve=all              " Virtual edit
@@ -247,7 +248,7 @@ set vb                  " Use visual bell instead of beeping"
 set sb                  " split below
 set spr                 " split right
 set so=3                " leave 3 lines below cursor
-set fdm=marker          " Marker fold method
+" set fdm=marker          " Marker fold method
 set hls                 " Highlight search results
 set wmnu                " Menu for tab completion
 set mouse=a             " Mouse support
@@ -270,8 +271,6 @@ endif
 " Show invisible characters
 " set list lcs=tab:»\ ,trail:·
 
-colo molokai
-
 " File patterns to ignore in wildcard expansions.
 set wig+=*/cabal-dev,*/dist,*.o,*.class,*.pyc,*.hi
 
@@ -291,8 +290,8 @@ let g:python_host_prog = '/usr/local/bin/python'
 let mapleader = "\<Space>"
 
 "Make finds center on screen
-nnoremap n nzz 
-nnoremap N Nzz 
+nnoremap n nzz
+nnoremap N Nzz
 
 " Auto detect and setup by filetype {{{
 filetype on
@@ -353,7 +352,6 @@ endfunction
 
 " Personal Customizations and Style
 " ----------------------------------------------------------------------------
-"
 
 " jk escape
 :imap jk <Esc>
@@ -368,14 +366,14 @@ map <C-l> <C-w>l
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 
-" Color Themes
-set t_Co=256   " This is may or may not needed.
+" 256 Color Themes
+set t_Co=256
 
 syntax on
+set background=dark
 
-set background=dark " Can set to light for other themes
-colorscheme PaperColor
+"colorscheme PaperColor
 "colorscheme monokai
 "colorscheme molokai
 "colorscheme nova
-"colorscheme one
+colorscheme one
