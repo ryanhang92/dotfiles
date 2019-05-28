@@ -3,27 +3,27 @@
 -- ctrl-cmd + L
 --      Start the screen saver.
 --
--- alt-shift + up/down/left/right
+-- ctrl-alt + up/down/left/right
 --      Move a window in the specified direction.
 --
--- alt-shift + up/down/left/right
+-- ctrl-alt-cmd + up/down/left/right
 --      Resize the window in the specified direction while keeping the
 --      top-left anchored.
 --
--- alt-shift + left/right
+-- ctrl-alt-shift + left/right
 --      Move the window to the next/previous screen while maintaining its size
 --      relative to that screen's grid.
 --
--- alt-shift + h/l
+-- cmd-shift + h/l
 --      Move the mouse to the screen in the given direction placing it in the
 --      same section of the new screen as the original.
 --
--- alt-shift + up/down/left/right
+-- cmd-control + up/down/left/right
 --      Resize the current window to take the given half of the screen. For
 --      left/right, if the window was already in that half, take that third of
 --      the screen.
 --
--- alt-shift + f
+-- cmd-control + f
 --      Resize the window to take the full screen. If the window was already
 --      taking the full screen, resize it to take a third of center third of
 --      the screen horizontally while remaining vertically full sized.

@@ -11,7 +11,7 @@ local resizes = {
 }
 
 for direction, resizer in pairs(resizes) do
-    hs.hotkey.bind({'alt', 'shift'}, direction, resizer)
+    hs.hotkey.bind({'ctrl', 'alt', 'cmd'}, direction, resizer)
 end
 
 -- move while snapping size to grid
@@ -38,5 +38,5 @@ end
 
 local screenMovers = {'left', 'right'}
 for k, dir in pairs(screenMovers) do
-    hs.hotkey.bind({'alt', 'shift'}, dir, screenMover(dir))
+    hs.hotkey.bind({'ctrl', 'alt', 'shift'}, dir, screenMover(dir))
 end

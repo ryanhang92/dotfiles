@@ -36,5 +36,5 @@ local directions = {
 }
 
 for k, dir in pairs(directions) do
-    hs.hotkey.bind({'alt', 'shift'}, k, focusScreen(dir))
+    hs.hotkey.bind({'command', 'shift'}, k, focusScreen(dir))
 end

@@ -1,0 +1,33 @@
+# You can install the Vim emulation package
+
+# getting JK escape to work 
+
+1) Command Pallet
+2) User Settings to modify the settings.json file to add the code below
+
+"vim.insertModeKeyBindings": [
+     {
+         "before": ["j", "k"],
+         "after": ["<esc>"]
+     }
+]
+
+To directly edit files in VS Code, install the code command.
+In VS Code, press command+shift+P
+Type shell install
+then you can do "code ." in the terminal to run vscode
+
+
+# Jump to definition in VS code
+
+# Issues
+
+Cannot find "go" binary. Update PATH or GOROOT appropriately
+    -I think this is because i have not built the project
+    -
+
+I had an issue where the go path was not set, i should set this here
+This extension uses a host of Go tools to provide the various rich features. These tools are installed in your GOPATH by default. If you wish to have the extension use a separate GOPATH for its tools, provide the desired location in the setting go.toolsGopath. Read more about this and the tools at Go tools that the Go extension depends on.
+
+* That did not work i think because it was installed in homebrew the binary was not found in the valid path, i actually just installed go from the website and then vs code started working - it must have installed it in the right place for it to pick up on those things
+

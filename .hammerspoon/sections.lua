@@ -221,5 +221,5 @@ end
 
 for direction, default in pairs(section.defaults) do
     hs.hotkey.bind(
-        {'alt', 'shift'}, direction, sectionResizer(direction, default))
+        {'cmd', 'ctrl'}, direction, sectionResizer(direction, default))
 end
