@@ -24,7 +24,7 @@ let g:deoplete#enable_at_startup = 1
 
 " General Plugins
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-bufferline'
+Plug 'ap/vim-buftabline'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -91,7 +91,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ajh17/spacegray.vim'
 Plug 'trevordmiller/nova-vim'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'justinmk/molokai'
+Plug 'fatih/molokai'
 Plug 'rakr/vim-one'
 
 call plug#end()
@@ -111,7 +111,7 @@ augroup end
 " Plugin Configurations
 
 " ale {{{2
-let g:ale_open_list = 1
+" let g:ale_open_list = 1
 let g:ale_sign_error='⊘'
 let g:ale_sign_warning='⚠'
 let g:ale_lint_on_save = 1
@@ -131,12 +131,15 @@ let g:ale_linter_aliases = {
 let g:ale_list_window_size = 10
 
 " Nerdtree
-map <C-n> :NERDTreeToggle<CR> " Toogle nerdTree with C-n
+map <C-n> :NERDTreeToggle %<CR> " Toogle nerdTree with C-n
 
 " ctrl-p
 let g:ctrlp_map = '<C-p>' " Ctrl P to C-p
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra' "Search in the current directory
+let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+let g:ctrlp_root_markers = ['README.md']
+
 
 " Airline {{{
 set laststatus=2
@@ -350,6 +353,8 @@ function! s:ClosePreview() " {{{2
     endif
 endfunction
 
+set expandtab
+
 " Personal Customizations and Style
 " ----------------------------------------------------------------------------
 
@@ -366,14 +371,16 @@ map <C-l> <C-w>l
 :nnoremap <Tab> :bnext<CR>
 :nnoremap <S-Tab> :bprevious<CR>
 
-" 256 Color Themes
-set t_Co=256
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 syntax on
-set background=dark
-
+"colorscheme wombat256
 "colorscheme PaperColor
 "colorscheme monokai
 "colorscheme molokai
-"colorscheme nova
-colorscheme one
+colorscheme nova
+"colorscheme onedark
