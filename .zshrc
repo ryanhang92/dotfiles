@@ -10,17 +10,21 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Aliases
+# Customize to your needs...
+#
+
 alias c=clear
 alias s=source
 alias rd="rm -rf"
-alias tmux="TERM=screen-256color-bce tmux"
-alias vim="nvim"
-alias python="python3"
-alias pip="pip3"
 
-# To add git information
-# Add 'git' to the pmodule list (under zstyle ':prezto:load' pmodule \ in your ~/.zpreztorc
-if [[ $TERM == xterm ]]; then
-    TERM=xter-256color
-fi
+alias vim="nvim"
+
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+# Abhinav was here
+# d=$(test -f /tmp/wat.txt && cat /tmp/wat.txt || echo 0.1)
+# (#sleep "$d" && echo "$d + 0.1") | bc > /tmp/wat.txt
+
+# export PATH="/usr/local/opt/go@1.10/bin:$PATH"
+# [ -r /Users/rhang/.profile_lda ] && . /Users/rhang/.profile_lda
